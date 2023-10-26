@@ -5,74 +5,74 @@ const PORT = process.env.PORT || 4000
 
 app.use(cors())
 const characters= {
-    'Gojo':{
+    'gojo':{
         'name':'Satoru Gojo',
         'equipment':'Slaughter Demon',
-        'ability':('Limitless','Infinity','Blue','Red','Purple')
+        'ability':'Limitless'//,'Infinity','Blue','Red','Purple')
     },
 
-    'Yuji':{
+    'yuji':{
         'name':'Yuji Itadori',
         'equipment':'Slaughter Demon',
         'ability':'Black Flash'
     },
-    'Megumi':{
+    'megumi':{
         'name':'Megumi Fushiguro',
         'equipment':'Jet Black Sword',
         'ability':'Shikigami Shadows'
     },
-    'Nobara':{
+    'nobara':{
         'name':'Nobara Kugisaki',
-        'equipment':('Hammer','Nails','Straw Doll'),
-        'ability':('Resonance','Straw Doll Technique','Hair Pin')
+        'equipment':'Hammer',//'Nails','Straw Doll'),
+        'ability':'Resonance'//,'Straw Doll Technique','Hair Pin')
     },
-    'Maki':{
+    'maki':{
         'name':'Maki Zenin',
         'equipment':'Naginata',
         'ability':'Cursed Tool Usage'
     },
-    'Toge':{
+    'toge':{
         'name':'Toge Inumaki',
         'equipment':'Cough Syrup',
         'ability':'Cursed Speech'
     },
-    'Panda':{
+    'panda':{
         'name':'Panda',
         'equipment':'Knuckle Bracers',
         'ability':'Cursed Corpse Modes'
     },
-    'Yuta':{
+    'yuta':{
         'name':'Yuta Okkotsu',
         'equipment':'Katana',
         'ability':'Rika'
     },
-    'Mai':{
+    'mai':{
         'name':'Mai Zenin',
         'equipment':'Revolver',
         'ability':'Construction'
     },
-    'Todo':{
+    'todo':{
         'name':'Aoi Todo',
         'equipment':'Playful Cloud',
         'ability':'Boogie Woogie'
     },
-    'Noritoshi':{
+    'noritoshi':{
         'name':'Noritoshi Kamo',
         'equipment':'Bow and Arrows',
         'ability':'Blood Manipulation'
     },
-    'Momo':{
+    'momo':{
         'name':'Momo Nishimiya',
         'equipment':'Straw Broom',
         'ability':'Wind Scythe'
     },
-    'Nanami':{
+    'nanami':{
         'name':'Kento Nanami',
         'equipment':'Blunt Sword',
-        'ability':('Ratio Technique',
-                    'Overtime')
+        'ability':'Ratio Technique'//,
+                   // 'Overtime')
     },
-    'Ino':{
+    'ino':{
         'name':'Takuma Ino',
         'equipment':'Mask',
         'ability':'Auspicious Beast Summon'
@@ -95,6 +95,7 @@ app.get('/api',(req,res)=>{
 })
 app.get('/api/:name',(req,res)=>{
     const characterName=req.params.name.toLowerCase()
+    console.log('characterName:', characterName)
     if(characters[characterName]){
         res.json(characters[characterName])
     }else{

@@ -1,25 +1,16 @@
 document.querySelector('button').addEventListener('click', apiRequest)
 
 async function apiRequest(){
-    const rapperName = document.querySelector('input').value
+    const characterName = document.querySelector('input').value
     try{
-        const response = await fetch(`https://simple-rapper-api.herokuapp.com/api/${rapperName}`)
+        const response = await fetch(`https://jujutsu-kaisen-api.onrender.com/api/${characterName}`)
         const data = await response.json()
 
         console.log(data)
         document.querySelector('h2').innerText = data.name
         document.querySelector('h3').innerText = data.equipment
+        document.querySelector('.ability').innerText = data.ability
     }catch(error){
         console.log(error)
     }
-} fetch(url)
-.then(res => res.json()) // parse response as JSON
-.then(data => {
- console.log(data)
- data.ability.forEach(obj => {
-  console.log (obj.ability)
-  const li = document.createElement('li')
-  li.textContent = obj.name
-  document.querySelector('.ability').appendChild(li)
-
-})})
+}
