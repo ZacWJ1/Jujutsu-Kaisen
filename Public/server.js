@@ -4,6 +4,8 @@ const cors=require('cors')
 const PORT = process.env.PORT || 4000
 
 app.use(cors())
+app.use(express.static('public'))
+
 const characters= {
     'gojo':{
         'name':'Satoru Gojo',
@@ -88,7 +90,7 @@ const characters= {
 
 
 app.get('/',(req, res)=>{
-    res.sendFile(__dirname + 'index.html')
+    res.sendFile(__dirname + '/index.html')
 })
 app.get('/api',(req,res)=>{
         res.json(characters)
