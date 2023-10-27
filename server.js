@@ -3,8 +3,8 @@ const app=express()
 const cors=require('cors')
 const PORT = process.env.PORT || 4000
 
-app.use(cors())
 app.use(express.static('public'))
+app.use(cors())
 
 const characters= {
     'gojo':{
